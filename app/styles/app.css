@@ -1,1 +1,47 @@
 /* Ember supports plain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
+
+
+/* Global Style */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+figure {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+img {
+    max-width: 100%;
+}
+
+.wrapper {
+    width: 90%;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+/* header */
+header {
+    background-color: black;
+}
+
+h1 {
+    color: white;
+    flex-basis: 80%;
+}
+
+.headerFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    flex-basis: 20%;
+}

@@ -1,4 +1,5 @@
 'use strict';
+const dotenv = require('dotenv').config();
 
 module.exports = function (environment) {
   const ENV = {
@@ -17,6 +18,11 @@ module.exports = function (environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+      // square: {
+      //   apiHost: 'https://connect.squareupsandbox.com',
+      //   apiNamespace: 'v2',
+      //   accessToken: 'EAAAEKZKA8S9jbVECgybi5H_MH-iicS2nfNLi-Dvhcljrs0rNDHwbf2kIkM7cFtp'
+      // }
     },
   };
 
@@ -26,6 +32,7 @@ module.exports = function (environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.APP.SANDBOX_ACCESS_TOKEN = dotenv.parsed.SANDBOX_ACCESS_TOKEN;
   }
 
   if (environment === 'test') {
@@ -43,6 +50,8 @@ module.exports = function (environment) {
   if (environment === 'production') {
     // here you can enable a production-specific feature
   }
+
+  // ENV.SANDBOX_ACCESS_TOKEN = 'EAAAEKZKA8S9jbVECgybi5H_MH-iicS2nfNLi-Dvhcljrs0rNDHwbf2kIkM7cFtp'
 
   return ENV;
 };
